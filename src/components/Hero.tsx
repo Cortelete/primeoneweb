@@ -78,12 +78,12 @@ export default function Hero() {
             <span className="text-sm font-medium tracking-wide uppercase">Operational Excellence</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight mb-8 drop-shadow-lg">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight mb-6 sm:mb-8 drop-shadow-lg">
             Your Dealership’s Detail Department — <br/>
             <span className="text-secondary inline-block">Managed for You.</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed drop-shadow-md">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 sm:mb-10 leading-relaxed drop-shadow-md">
             We help dealerships move cars faster, improve presentation, reduce management headaches, and deliver a cleaner, more consistent customer experience.
           </p>
           
@@ -92,7 +92,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="#contact" 
-              className="inline-flex justify-center items-center gap-2 bg-secondary text-primary font-bold px-8 py-4 rounded-xl text-lg transition-colors hover:bg-yellow-300 shadow-[0_0_20px_rgba(250,204,21,0.3)]"
+              className="inline-flex justify-center items-center gap-2 bg-secondary text-primary font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-xl text-base sm:text-lg transition-colors hover:bg-yellow-300 shadow-[0_0_20px_rgba(250,204,21,0.3)]"
             >
               Get a Workflow Evaluation
               <ArrowRight className="w-5 h-5" />
@@ -101,7 +101,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="#problems" 
-              className="inline-flex justify-center items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-8 py-4 rounded-xl text-lg backdrop-blur-md transition-colors"
+              className="inline-flex justify-center items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-xl text-base sm:text-lg backdrop-blur-md transition-colors"
             >
               See the Problems We Solve
             </motion.a>
@@ -109,17 +109,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-8 left-[max(1.5rem,calc(50%-40rem))] lg:left-1/2 lg:-translate-x-1/2 z-30"
-      >
-        <a href="#problems" className="flex flex-col items-center gap-2 text-white/70 hover:text-secondary transition-colors group">
-          <span className="text-sm tracking-widest uppercase font-medium drop-shadow-md">Scroll</span>
-          <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform drop-shadow-md" />
-        </a>
-      </motion.div>
     </section>
   );
 }
