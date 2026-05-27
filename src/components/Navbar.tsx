@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
         <a href="#home" className="text-2xl font-heading font-bold text-white tracking-tight flex items-center gap-3 relative z-50">
           <img src="/logo.png" alt="Prime One Logo" className="h-10 w-auto" />
-          Prime One<span className="text-secondary">.</span>
+          <img src="/logofonte.png" alt="Prime One" className="h-6 w-auto" />
         </a>
 
         {/* Desktop Nav */}
@@ -53,7 +53,7 @@ export default function Navbar() {
             href="#contact"
             className="bg-secondary text-primary font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-yellow-300 transition-colors"
           >
-            Get Analysis
+            Get a Quote
           </a>
         </div>
 
@@ -89,7 +89,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="bg-secondary text-primary font-bold px-8 py-4 rounded-xl text-lg hover:bg-yellow-300 transition-colors mt-4"
               >
-                Get Analysis
+                Get a Quote
               </a>
             </motion.div>
           )}

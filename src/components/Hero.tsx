@@ -73,9 +73,9 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-xl lg:max-w-2xl xl:max-w-3xl"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-secondary border border-secondary/20 mb-8 backdrop-blur-sm">
+          <div className="flex items-center gap-3 text-secondary mb-8">
             <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-            <span className="text-sm font-medium tracking-wide uppercase">Operational Excellence</span>
+            <span className="text-sm sm:text-base font-medium tracking-widest uppercase">The best partnership for your dealership</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight mb-6 sm:mb-8 drop-shadow-lg">
@@ -94,7 +94,7 @@ export default function Hero() {
               href="#contact" 
               className="inline-flex justify-center items-center gap-2 bg-secondary text-primary font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-xl text-base sm:text-lg transition-colors hover:bg-yellow-300 shadow-[0_0_20px_rgba(250,204,21,0.3)]"
             >
-              Get a Workflow Evaluation
+              Get a Quote
               <ArrowRight className="w-5 h-5" />
             </motion.a>
             <motion.a 
@@ -103,7 +103,7 @@ export default function Hero() {
               href="#problems" 
               className="inline-flex justify-center items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-xl text-base sm:text-lg backdrop-blur-md transition-colors"
             >
-              See the Problems We Solve
+              The Problems We Solve
             </motion.a>
           </div>
         </motion.div>

@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <a href="#contact" className="inline-flex items-center gap-2 text-secondary font-medium hover:text-yellow-300 transition-colors">
-                Request an Evaluation <ArrowRight className="w-4 h-4" />
+                Request a Quote <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -43,8 +43,8 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
                 <Mail className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                <a href="mailto:inteligenciarte@gmail.com" className="hover:text-secondary transition-colors">
-                  inteligenciarte@gmail.com
+                <a href="mailto:info@primeoneinc.com" className="hover:text-secondary transition-colors">
+                  info@primeoneinc.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-gray-400">
@@ -61,8 +61,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Prime One Consulting. All rights reserved.
           </div>
           <div className="text-gray-500 text-sm flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#terms" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

@@ -1,33 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
   --color-primary: #111827; /* gray-900 */
   --color-secondary: #facc15; /* yellow-400 */
   --color-surface: #f9fafb; /* gray-50 */
+  --animate-carousel: carousel 45s linear infinite;
+}
+
+@keyframes carousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 body {
   font-family: var(--font-sans);
   background-color: var(--color-surface);
   color: var(--color-primary);
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
 }
 
-body::-webkit-scrollbar {
-  display: none;
-}
-
+/* Custom Scrollbar */
 html {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-primary) var(--color-surface);
 }
 
-html::-webkit-scrollbar {
-  display: none;
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 6px;
+  border: 2px solid var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-surface);
 }
 
 h1, h2, h3, h4, h5, h6 {

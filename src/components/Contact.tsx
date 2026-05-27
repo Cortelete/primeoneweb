@@ -1,30 +1,15 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Send, Loader2 } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     dealership: '',
     message: ''
   });
-  
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('submitting');
-    
-    // Simulate form submission to email provided
-    setTimeout(() => {
-      setStatus('success');
-      // Here you would typically integrate with a backend service to send the email
-      console.log('Sending message to: inteligenciarte@gmail.com', formData);
-      setFormData({ name: '', email: '', dealership: '', message: '' });
-      setTimeout(() => setStatus('idle'), 5000);
-    }, 1500);
-  };
 
   return (
     <section className="py-16 md:py-24 bg-surface" id="contact">
@@ -64,20 +49,25 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 md:p-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl">
-                <h3 className="text-xl sm:text-2xl font-bold text-primary mb-6 sm:mb-8">Request an Evaluation</h3>
+              <form action="https://formsubmit.co/info@primeoneinc.com" method="POST" className="bg-white p-6 sm:p-8 md:p-10 rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl">
+                <h3 className="text-xl sm:text-2xl font-bold text-primary mb-6 sm:mb-8">Request a Quote</h3>
                 
+                {/* Formsubmit Configuration */}
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+
                 <div className="space-y-4 sm:space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">Full Name</label>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">Full Name</label>
                     <input 
                       type="text" 
                       id="name" 
+                      name="name"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl bg-gray-50 border border-gray-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all placeholder:text-gray-400 text-sm sm:text-base"
-                      placeholder="John Doe"
+                      placeholder="Full Name"
                     />
                   </div>
                   
@@ -86,11 +76,12 @@ export default function Contact() {
                     <input 
                       type="text" 
                       id="dealership"
+                      name="dealership"
                       required 
                       value={formData.dealership}
                       onChange={(e) => setFormData({...formData, dealership: e.target.value})}
                       className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl bg-gray-50 border border-gray-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all placeholder:text-gray-400 text-sm sm:text-base"
-                      placeholder="City Motors"
+                      placeholder="Dealership Name"
                     />
                   </div>
 
@@ -99,40 +90,48 @@ export default function Contact() {
                     <input 
                       type="email" 
                       id="email" 
+                      name="email"
                       required
+                      pattern="[^@\s]+@[^@\s]+"
+                      title="Please include an '@' in the email address."
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
                       className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl bg-gray-50 border border-gray-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all placeholder:text-gray-400 text-sm sm:text-base"
-                      placeholder="john@citymotors.com"
+                      placeholder="email@email.com"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">Tell us about your challenges</label>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">Phone Number</label>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      name="phone"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl bg-gray-50 border border-gray-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all placeholder:text-gray-400 text-sm sm:text-base"
+                      placeholder="Phone Number"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5 sm:mb-2">How can we help?</label>
                     <textarea 
                       id="message" 
+                      name="message"
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
                       className="w-full px-4 sm:px-5 py-3 sm:py-4 rounded-xl bg-gray-50 border border-gray-200 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all placeholder:text-gray-400 resize-none text-sm sm:text-base"
-                      placeholder="We are struggling with..."
+                      placeholder="We would like to..."
                     ></textarea>
                   </div>
                   
                   <button 
                     type="submit" 
-                    disabled={status === 'submitting' || status === 'success'}
-                    className="w-full bg-primary hover:bg-gray-800 text-white font-bold py-3.5 sm:py-4 rounded-xl flex items-center justify-center gap-2 transition-colors disabled:opacity-70 disabled:cursor-not-allowed text-sm sm:text-base mt-2"
+                    className="w-full bg-primary hover:bg-gray-800 text-white font-bold py-3.5 sm:py-4 rounded-xl flex items-center justify-center gap-2 transition-colors text-sm sm:text-base mt-2"
                   >
-                    {status === 'idle' && (
-                      <>Send Message <Send className="w-4 h-4 sm:w-5 sm:h-5" /></>
-                    )}
-                    {status === 'submitting' && (
-                      <><Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" /> Sending...</>
-                    )}
-                    {status === 'success' && (
-                      <>Message Sent Successfully</>
-                    )}
+                    Send Message <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                 </div>
               </form>

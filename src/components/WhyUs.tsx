@@ -19,7 +19,7 @@ export default function WhyUs() {
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-start">
           
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -35,24 +35,6 @@ export default function WhyUs() {
                 <h3 className="text-xl sm:text-3xl font-heading font-bold mb-2 sm:mb-4">Operations Partner</h3>
                 <p className="text-gray-400 text-sm sm:text-base">We are not just a "detail company". We integrate with your performance goals.</p>
               </div>
-              
-              {/* Floating badges */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-4 -right-4 sm:top-10 sm:-right-10 bg-white text-primary px-4 py-2 sm:px-6 sm:py-3 rounded-2xl shadow-xl font-bold flex items-center gap-2 text-sm sm:text-base z-20"
-              >
-                <div className="w-2 h-2 rounded-full bg-green-500" />
-                Accountability
-              </motion.div>
-              
-              <motion.div 
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-4 -left-4 sm:bottom-10 sm:-left-10 bg-secondary text-primary px-4 py-2 sm:px-6 sm:py-3 rounded-2xl shadow-xl font-bold flex items-center gap-2 text-sm sm:text-base z-20"
-              >
-                Leadership
-              </motion.div>
             </div>
           </motion.div>
 

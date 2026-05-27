@@ -57,10 +57,7 @@ export default function Problems() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
-                The <span className="text-secondary relative">
-                  Problems
-                  <span className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-1.5 sm:h-2 bg-secondary/30 rounded-full"></span>
-                </span> We Solve.
+                The <span className="text-secondary">Problems</span> We Solve.
               </h2>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6 font-medium">
                 Your detail department touches almost every part of your dealership.
@@ -68,15 +65,6 @@ export default function Problems() {
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
                 Sales depends on it. Service depends on it. Used cars depend on it. Customer deliveries depend on it. Online inventory depends on it. <strong className="text-primary">And when detail is not running properly, the entire store feels it.</strong>
               </p>
-              <div className="hidden lg:flex items-center gap-4 p-6 bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100">
-                <div className="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center text-secondary">
-                  <Target className="w-6 h-6 text-yellow-600" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-primary">Strategic Advantage</h4>
-                  <p className="text-sm text-gray-500">Turn a bottleneck into a catalyst.</p>
-                </div>
-              </div>
             </motion.div>
           </div>
           

@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Briefcase, SprayCan, Sparkles, ClipboardCheck, 
-  CarFront, Bath, FolderKanban, UsersRound, 
-  Workflow, Network, X
+  Briefcase, Handshake, Sparkles, ClipboardCheck, 
+  CarFront, FolderKanban, UsersRound, 
+  Workflow, Network, X, Droplets, Key, ShieldCheck
 } from 'lucide-react';
 
 const services = [
   { text: "Daily dealership detail operations", icon: Briefcase, description: "Comprehensive day-to-day management of your detail department, ensuring smooth operations and consistent output." },
   { text: "New and used vehicle details", icon: Sparkles, description: "Thorough cleaning and reconditioning for all inventory, making every car front-line ready." },
-  { text: "Clean-for-delivery support", icon: SprayCan, description: "Fast, high-quality final preparations to ensure the vehicle looks perfect before customer handover." },
+  { text: "Clean-for-delivery support", icon: Handshake, description: "Fast, high-quality final preparations to ensure the vehicle looks perfect before customer handover." },
   { text: "PDI cleaning", icon: ClipboardCheck, description: "Pre-Delivery Inspection washes and detailing to prepare newly arrived vehicles for the lot." },
   { text: "Lot refreshes", icon: CarFront, description: "Periodic maintenance cleaning of lot inventory to keep vehicles looking sharp and presentable." },
-  { text: "Loaner vehicle cleaning", icon: Bath, description: "Quick turnovers and deep cleaning for your dealership's service loaner fleet." },
-  { text: "Service wash support", icon: Bath, description: "Efficient washes for fixed operations, keeping service customers happy and vehicles moving." },
+  { text: "Loaner vehicle cleaning", icon: Key, description: "Quick turnovers and deep cleaning for your dealership's service loaner fleet." },
+  { text: "Service wash support", icon: Droplets, description: "Efficient washes for fixed operations, keeping service customers happy and vehicles moving." },
   { text: "Inventory presentation", icon: FolderKanban, description: "Strategic positioning and presentation focused on maximizing lot appeal." },
-  { text: "Quality control", icon: ClipboardCheck, description: "Rigorous multi-point inspections to ensure every vehicle meets the dealership's high standards." },
+  { text: "Quality control", icon: ShieldCheck, description: "Rigorous multi-point inspections to ensure every vehicle meets the dealership's high standards." },
   { text: "Staffing and supervision", icon: UsersRound, description: "Recruiting, training, and managing detail staff so you don't have to worry about turnover or performance." },
   { text: "Workflow communication", icon: Workflow, description: "Clear processes and updates between sales, service, and detail to prevent bottlenecks." },
   { text: "Manager coordination", icon: Network, description: "Direct collaboration with your store managers to align priorities and hit operational targets." },
