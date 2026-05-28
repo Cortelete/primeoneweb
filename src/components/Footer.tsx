@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3 mb-6">
               <img src="/logo.png" alt="Prime One Logo" className="h-12 w-auto" />
-              <span className="text-3xl font-heading font-bold text-white tracking-tight">Prime One<span className="text-secondary">.</span></span>
+              <img src="/logofonte.png" alt="Prime One" className="h-7 w-auto" />
             </div>
             <p className="text-gray-400 leading-relaxed max-w-md mb-8">
               Your Dealership’s Detail Department — Managed for You. We provide trained staffing, daily supervision, quality control, and operational accountability.
