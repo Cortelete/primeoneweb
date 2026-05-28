@@ -70,7 +70,7 @@ export default function Hero() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" as any }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-xl lg:max-w-2xl xl:max-w-3xl"
         >
           <div className="flex items-center gap-3 text-secondary mb-8">
