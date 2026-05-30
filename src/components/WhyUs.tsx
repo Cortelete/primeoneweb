@@ -16,7 +16,7 @@ export default function WhyUs() {
     <section className="py-16 md:py-24 bg-primary text-white relative overflow-hidden" id="why-us">
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-full md:w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none" />
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-900/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-start">
@@ -28,12 +28,25 @@ export default function WhyUs() {
             transition={{ duration: 0.8 }}
             className="relative order-2 lg:order-1"
           >
-            <div className="aspect-square max-w-[280px] sm:max-w-md mx-auto rounded-full border border-white/10 flex items-center justify-center relative p-4 sm:p-8">
-              <div className="absolute inset-0 bg-gradient-to-tr from-secondary/20 to-transparent rounded-full animate-[spin_10s_linear_infinite]" />
-              <div className="bg-white/5 backdrop-blur-md rounded-full w-full h-full border border-white/10 flex flex-col items-center justify-center p-6 sm:p-10 text-center relative z-10 shadow-2xl">
-                <ShieldCheck className="w-10 h-10 sm:w-16 sm:h-16 text-secondary mb-4 sm:mb-6" />
-                <h3 className="text-xl sm:text-3xl font-heading font-bold mb-2 sm:mb-4">Operations Partner</h3>
-                <p className="text-gray-400 text-sm sm:text-base">We are not just a "detail company". We integrate with your performance goals.</p>
+            <div className="aspect-square max-w-[280px] sm:max-w-md mx-auto flex items-center justify-center relative p-4 sm:p-8">
+              {/* Elegant floating blue rings */}
+              <div 
+                className="absolute inset-[0px] rounded-full border-[1px] border-slate-700/60 animate-[spin_20s_linear_infinite]" 
+                style={{ transformOrigin: '48% 52%' }} 
+              />
+              <div 
+                className="absolute inset-[12px] rounded-full border-[1px] border-blue-800/50 animate-[spin_25s_linear_infinite_reverse]" 
+                style={{ transformOrigin: '51% 49%' }} 
+              />
+              <div 
+                className="absolute inset-[24px] rounded-full border-[1px] border-indigo-800/40 animate-[spin_30s_linear_infinite]" 
+                style={{ transformOrigin: '52% 48%' }} 
+              />
+              
+              <div className="bg-primary/80 backdrop-blur-md rounded-full w-full h-full border border-white/5 flex flex-col items-center justify-center p-6 sm:p-10 text-center relative z-10 shadow-2xl">
+                <ShieldCheck className="w-10 h-10 sm:w-16 sm:h-16 text-blue-400 mb-4 sm:mb-6 opacity-90 stroke-[1.5]" />
+                <h3 className="text-xl sm:text-3xl font-heading font-bold mb-2 sm:mb-4 text-white">Operations Partner</h3>
+                <p className="text-slate-400 text-sm sm:text-base font-light">We are not just a "detail company". We integrate with your performance goals.</p>
               </div>
             </div>
           </motion.div>
