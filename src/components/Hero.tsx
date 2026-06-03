@@ -73,8 +73,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-xl lg:max-w-2xl xl:max-w-3xl"
         >
-          <div className="flex items-center gap-3 text-secondary mb-8">
-            <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+          <div className="flex items-center text-secondary mb-8">
             <span className="text-sm sm:text-base font-medium tracking-widest uppercase">The best partnership for your dealership</span>
           </div>
           
