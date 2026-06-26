@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Brands from './components/Brands';
@@ -18,19 +18,35 @@ import TermsOfService from './components/TermsOfService';
 
 export default function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
+  const isPrivacy = currentHash === '#privacy';
+  const isTerms = currentHash === '#terms';
+  const isHome = !isPrivacy && !isTerms;
+  const wasHome = useRef(isHome);
 
   useEffect(() => {
     const handleHashChange = () => {
-      setCurrentHash(window.location.hash);
-      window.scrollTo(0, 0);
+      const hash = window.location.hash;
+      setCurrentHash(hash);
+      if (hash === '#privacy' || hash === '#terms' || hash === '') {
+        window.scrollTo(0, 0);
+      }
     };
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const isPrivacy = currentHash === '#privacy';
-  const isTerms = currentHash === '#terms';
-  const isHome = !isPrivacy && !isTerms;
+  // Ensure we scroll to the correct section if navigating from a different page (like Privacy -> Services)
+  useEffect(() => {
+    if (isHome && !wasHome.current && currentHash && currentHash !== '#') {
+      const element = document.getElementById(currentHash.substring(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+      }
+    }
+    wasHome.current = isHome;
+  }, [isHome, currentHash]);
 
   return (
     <div className="min-h-screen bg-surface">

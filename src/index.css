@@ -23,6 +23,7 @@ body {
 
 /* Custom Scrollbar */
 html {
+  scroll-behavior: smooth;
   scrollbar-width: auto;
   scrollbar-color: var(--color-primary) var(--color-surface);
 }
